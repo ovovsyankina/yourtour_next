@@ -1,10 +1,10 @@
-import React from "react";
 import styles from "./HomePage.module.scss";
+import Header from "@/components/common/Header/Header";
 
 const HomePage = () => {
   return (
     <div className={styles.root}>
-      <h2>Hello</h2>
+      <Header />
     </div>
   );
 };
