@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  width: 370px;
+  height: 531px;
+}
+
+.img_gradient {
+  position: absolute;
+  z-index: 1;
+  width: 370px;
+  height: 531px;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.06) 48.44%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border-radius: 50px;
+}
+
+.img_card {
+  border-radius: 50px;
+}
+.img {
+  position: relative;
+}

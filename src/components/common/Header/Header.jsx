@@ -25,7 +25,7 @@ const Header = () => {
         <MyButton
           title="Найти тур"
           type="submit"
-          className={styles.header_button}
+          className={styles.button_searchTour}
         />
       </div>
     </div>

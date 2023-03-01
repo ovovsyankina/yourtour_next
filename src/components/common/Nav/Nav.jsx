@@ -1,14 +1,19 @@
 import Image from "next/image";
 import styles from "./Nav.module.scss";
-import logo_yourTour from "#/public/image/svg/logo_yourTour.svg";
 import Link from "next/link";
-import { navLinks } from "@/utils/nav_data";
+import { navLinks } from "@/utils/data";
 
 const Nav = () => {
   return (
     <div className={styles.root}>
       <div className={styles.nav}>
-        <Image src={logo_yourTour} className={styles.logo} alt="logo" />
+        <Image
+          src="/image/svg/logo_yourTour.svg"
+          className={styles.logo}
+          alt="logo"
+          width="182"
+          height="32"
+        />
         <nav className={styles.nav_items}>
           {navLinks.map((link) => {
             return (

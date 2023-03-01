@@ -1,12 +1,11 @@
-@use "../../../styles/color" as *;
-@use "../../../styles/media" as *;
-@use "../../../styles/fonts" as *;
+@use "@/styles/color" as *;
+@use "@/styles/media" as *;
+@use "@/styles/fonts" as *;
 
 .root {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   width: 100%;
   height: 831px;
 }
@@ -48,7 +47,7 @@
   color: $white-color;
 }
 
-.header_button {
+.button_searchTour {
   display: flex;
   width: 118px;
   height: 34px;
@@ -56,8 +55,6 @@
   font-family: Roboto_Regular;
   font-size: 17px;
   line-height: 142%;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: center;
   align-items: center;
   background: $white-color;
