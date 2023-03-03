@@ -1,20 +1,20 @@
 import styles from "./HomePage.module.scss";
-import Header from "@/components/common/Header/Header";
-import WindowSelectTour from "@/components/common/WindowSelectTour/WindowSelectTour";
-import WindowCollectTour from "@/components/common/WindowCollectTour/WindowCollectTour";
-import WindowReviews from "@/components/common/WindowReviews/WindowReviews";
-import WindowtTavelPhotos from "@/components/common/WindowtTavelPhotos/WindowtTavelPhotos";
-import WindowHistoryTravel from "@/components/common/WindowHistoryTravel/WindowHistoryTravel";
+import HeaderSection from "@/components/common/HeaderSection/HeaderSection";
+import SelectTourSection from "@/components/common/SelectTourSection/SelectTourSection";
+import CollectTourSection from "@/components/common/CollectTourSection/CollectTourSection";
+import ReviewsSection from "@/components/common/ReviewsSection/ReviewsSection";
+import TravelPhotosSection from "@/components/common/TravelPhotosSection/TravelPhotosSection";
+import HistoryTravelSection from "@/components/common/HistoryTravelSection/HistoryTravelSection";
 
 const HomePage = () => {
   return (
     <div className={styles.root}>
-      <Header />
-      <WindowSelectTour />
-      <WindowCollectTour />
-      <WindowReviews />
-      <WindowtTavelPhotos />
-      {/* <WindowHistoryTravel /> */}
+      <HeaderSection />
+      <SelectTourSection />
+      <CollectTourSection />
+      <ReviewsSection />
+      <TravelPhotosSection />
+      <HistoryTravelSection />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import styles from "./WindowCollectTour.module.scss";
+import styles from "./CollectTourSection.module.scss";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
@@ -8,7 +8,7 @@ import Textarea from "../Textarea/Textarea";
 import Checkbox from "../Checkbox/Checkbox";
 import Button from "../Button/Button";
 
-const WindowCollectTour = () => {
+const CollectTourSection = () => {
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   return (
@@ -128,4 +128,4 @@ const WindowCollectTour = () => {
   );
 };
 
-export default WindowCollectTour;
+export default CollectTourSection;

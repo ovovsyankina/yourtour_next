@@ -1,10 +1,10 @@
+import styles from "./HistoryTravelSection.module.scss";
 import { cardsImgHistoryTour } from "@/utils/data";
 import Image from "next/image";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import ImageCard from "../ImageCard/ImageCard";
-import styles from "./WindowHistoryTravel.module.scss";
 
-const WindowHistoryTravel = () => {
+const HistoryTravelSection = () => {
   return (
     <div className={styles.root}>
       <div className={styles.historyTravel_window}>
@@ -50,4 +50,4 @@ const WindowHistoryTravel = () => {
   );
 };
 
-export default WindowHistoryTravel;
+export default HistoryTravelSection;

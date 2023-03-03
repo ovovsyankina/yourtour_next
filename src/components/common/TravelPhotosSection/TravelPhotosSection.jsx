@@ -1,12 +1,9 @@
 import { screenWidth } from "@/utils/data";
 import { useEffect, useRef } from "react";
 import BlockHeader from "../BlockHeader/BlockHeader";
-import styles from "./WindowtTavelPhotos.module.scss";
+import styles from "./TravelPhotosSection.module.scss";
 
-const WindowtTavelPhotos = () => {
-  //   useEffect(() => {
-  //     window.addEventListener("resize", () => console.log(window.innerWidth));
-  //   }, []);
+const TravelPhotosSection = () => {
   return (
     <div className={styles.root}>
       <BlockHeader
@@ -22,4 +19,4 @@ const WindowtTavelPhotos = () => {
     </div>
   );
 };
-export default WindowtTavelPhotos;
+export default TravelPhotosSection;

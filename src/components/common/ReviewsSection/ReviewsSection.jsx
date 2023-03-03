@@ -1,8 +1,8 @@
+import styles from "./ReviewsSection.module.scss";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import ReviewsCard from "../ReviewsCard/ReviewsCard";
-import styles from "./WindowReviews.module.scss";
 
-const WindowReviews = () => {
+const ReviewsSection = () => {
   return (
     <div className={styles.root}>
       <div className={styles.reviews_window}>
@@ -56,4 +56,4 @@ const WindowReviews = () => {
   );
 };
 
-export default WindowReviews;
+export default ReviewsSection;

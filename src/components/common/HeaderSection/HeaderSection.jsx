@@ -1,9 +1,9 @@
-import styles from "./Header.module.scss";
+import styles from "./HeaderSection.module.scss";
 import Image from "next/image";
 import Nav from "../Nav/Nav";
 import Button from "../Button/Button";
 
-const Header = () => {
+const HeaderSection = () => {
   return (
     <div className={styles.root}>
       <Image
@@ -31,4 +31,4 @@ const Header = () => {
     </div>
   );
 };
-export default Header;
+export default HeaderSection;

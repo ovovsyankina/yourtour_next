@@ -1,11 +1,11 @@
+import styles from "./SelectTourSection.module.scss";
 import { cardsImgSelectTour, tabsSelectTour } from "@/utils/data";
 import classNames from "classnames";
 import Image from "next/image";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import ImageCard from "../ImageCard/ImageCard";
-import styles from "./WindowSelectTour.module.scss";
 
-const WindowSelectTour = () => {
+const SelectTourSection = () => {
   return (
     <div className={styles.root}>
       <div className={styles.selectTour_window}>
@@ -51,4 +51,4 @@ const WindowSelectTour = () => {
     </div>
   );
 };
-export default WindowSelectTour;
+export default SelectTourSection;
