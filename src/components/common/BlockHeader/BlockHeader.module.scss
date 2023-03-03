@@ -1,0 +1,20 @@
+@use "@/styles/color" as *;
+@use "@/styles/fonts" as *;
+
+.block_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description_block {
+  width: 418px;
+  height: 56px;
+  margin-top: 30px;
+  font-family: Roboto_Regular;
+  font-size: 20px;
+  line-height: 142%;
+  text-align: center;
+  color: $grey-color;
+}

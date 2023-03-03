@@ -1,0 +1,37 @@
+@use "@/styles/color" as *;
+@use "@/styles/fonts" as *;
+
+.root {
+  display: flex;
+  width: 500px;
+  height: 104px;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: Roboto_Regular;
+  font-size: 20px;
+  line-height: 142%;
+  color: $black-color;
+}
+
+.dropdown {
+  display: flex;
+  width: 500px;
+  height: 68px;
+  padding: 20px;
+  margin-top: 8px;
+  font-size: 20px;
+  background-color: $beige100-color;
+  background-image: url("../../../../public/image/svg/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-position-x: calc(100% - 24px);
+  background-position-y: calc(100% - 27px);
+  border: 1px solid $beige200-color;
+  border-radius: 10px;
+  outline: 0;
+  appearance: none;
+  color: $black-color;
+  &:invalid {
+    color: $grey-color;
+  }
+}

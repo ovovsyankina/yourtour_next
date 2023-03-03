@@ -1,0 +1,73 @@
+@use "@/styles/color" as *;
+
+.root {
+  display: flex;
+  height: 28px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label_button {
+  position: relative;
+  display: flex;
+  width: 26px;
+  height: 26px;
+  margin-right: 11px;
+  color: $black-color;
+}
+.radio_button {
+  display: none;
+}
+.radio_button + label::before {
+  display: inline-block;
+  content: "";
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  background-image: url("../../../../public/image/svg/Ellipse_radio.svg");
+}
+.radio_button:checked + label::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  content: "";
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  background-image: url("../../../../public/image/svg/radiobutton.svg");
+}
+
+.checkbox_button {
+  display: none;
+}
+
+.checkbox_button + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.checkbox_button + label::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #1b1f2b;
+  border-radius: 0.25em;
+  margin-right: 19px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.checkbox_button:checked + label::before {
+  border-color: #1b1f2b;
+  background-color: white;
+  background-image: url("../../../../public/image/svg/check_dogovor.svg");
+  background-size: 70%;
+  background-position: center;
+}

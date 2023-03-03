@@ -13,6 +13,7 @@ const Nav = () => {
           alt="logo"
           width="182"
           height="32"
+          priority
         />
         <nav className={styles.nav_items}>
           {navLinks.map((link) => {

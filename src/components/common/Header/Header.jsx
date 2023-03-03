@@ -1,7 +1,7 @@
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import Nav from "../Nav/Nav";
-import MyButton from "../MyButton/MyButton";
+import Button from "../Button/Button";
 
 const Header = () => {
   return (
@@ -22,7 +22,7 @@ const Header = () => {
           Идейные соображения высшего порядка, а также рамки и место обучения
           кадров
         </p>
-        <MyButton
+        <Button
           title="Найти тур"
           type="submit"
           className={styles.button_searchTour}
