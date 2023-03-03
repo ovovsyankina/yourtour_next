@@ -6,7 +6,10 @@ const ImageCard = ({ srcImg, children }) => {
   return (
     <div className={styles.root}>
       <div className={styles.img}>
-        <div className={styles.img_gradient}></div>
+        <div
+          className={styles.img_gradient}
+          style={{ width: "370px", height: "531px" }}
+        />
         <Image
           src={srcImg}
           alt={srcImg}
@@ -20,6 +23,11 @@ const ImageCard = ({ srcImg, children }) => {
   );
 };
 
-ImageCard.propTypes = { srcImg: string, children: object };
+ImageCard.propTypes = {
+  srcImg: string,
+  children: object,
+  width: "370px",
+  height: "531px",
+};
 
 export default ImageCard;

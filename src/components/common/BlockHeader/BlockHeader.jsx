@@ -5,7 +5,7 @@ const BlockHeader = ({ title, description }) => {
   return (
     <div className={styles.block_header}>
       <h2 className={styles.title_block}>{title}</h2>
-      {description.length !== 0 && (
+      {description.props.children !== undefined && (
         <div className={styles.description_block}>{description}</div>
       )}
     </div>

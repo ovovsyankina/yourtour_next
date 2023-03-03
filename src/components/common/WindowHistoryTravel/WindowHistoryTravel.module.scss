@@ -4,28 +4,41 @@
 .root {
   display: flex;
   width: 100%;
-  height: 1005px;
+  height: 2060px;
   margin-top: 135px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.reviews_window {
+.historyTravel_window {
   display: flex;
   width: 1170px;
-  height: 1005px;
+  height: 2060px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.reviews_cards {
+.image_cards {
   display: flex;
   width: 100%;
-  height: 673px;
-  margin-top: 100px;
-  flex-direction: row;
+  height: 1801px;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 50px;
+}
+
+.card_children {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  width: 100%;
+  height: 567px;
+
+  padding: 50px;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
+  color: $white-color;
 }

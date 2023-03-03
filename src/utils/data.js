@@ -67,3 +67,16 @@ export const cardsImgSelectTour = [
     index: 6,
   },
 ];
+
+export const cardsImgHistoryTour = [
+  { srcImg: "/image/history_photo1.jpg", index: 1 },
+
+  {
+    srcImg: "/image/history_photo2.jpg",
+    index: 2,
+  },
+  {
+    srcImg: "/image/history_photo3.jpg",
+    index: 3,
+  },
+];

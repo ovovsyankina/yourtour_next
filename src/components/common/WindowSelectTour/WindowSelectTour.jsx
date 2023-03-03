@@ -9,7 +9,7 @@ const WindowSelectTour = () => {
   return (
     <div className={styles.root}>
       <div className={styles.selectTour_window}>
-        <BlockHeader title="Выбери свой тур" description="" />
+        <BlockHeader title="Выбери свой тур" description={<></>} />
         <div className={styles.tabs_items}>
           {tabsSelectTour.map((tab) => {
             return (

@@ -3,13 +3,7 @@ import styles from "./Button.module.scss";
 
 const Button = ({ title, type, className }) => {
   return (
-    <button
-      type={type}
-      className={className}
-      onClick={() => {
-        console.log(type);
-      }}
-    >
+    <button type={type} className={className}>
       {title}
     </button>
   );

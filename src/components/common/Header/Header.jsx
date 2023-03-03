@@ -8,7 +8,7 @@ const Header = () => {
     <div className={styles.root}>
       <Image
         className={styles.header_img}
-        src="/image/header_img.png"
+        src="/image/header_img.jpg"
         alt="header_img"
         fill
         priority

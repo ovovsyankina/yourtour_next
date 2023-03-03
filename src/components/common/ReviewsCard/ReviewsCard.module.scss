@@ -1,0 +1,57 @@
+@use "@/styles/color" as *;
+@use "@/styles/fonts" as *;
+
+.root {
+  display: flex;
+  width: 570px;
+  height: 673px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  background: $beige200-color;
+  border-radius: 50px;
+}
+
+.review {
+  font-family: Roboto_Bold;
+  font-size: 23px;
+  line-height: 122%;
+  color: $black-color;
+}
+
+.review_author {
+  display: flex;
+  width: 490px;
+  height: 75px;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.info_author {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name_author {
+  font-family: Roboto_Medium;
+  font-size: 35px;
+  line-height: 122%;
+  color: $black-color;
+}
+
+.name_tour {
+  margin-top: 8px;
+  font-family: Roboto_Regular;
+  font-size: 17px;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  color: $grey-color;
+}
+
+.img_author {
+  border-radius: 100px;
+}

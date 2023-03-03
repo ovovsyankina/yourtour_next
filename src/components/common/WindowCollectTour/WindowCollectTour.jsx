@@ -3,7 +3,6 @@ import BlockHeader from "../BlockHeader/BlockHeader";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import Input from "../Input/Input";
-import { Fragment } from "react";
 import Select from "../Select/Select";
 import Textarea from "../Textarea/Textarea";
 import Checkbox from "../Checkbox/Checkbox";
@@ -18,10 +17,10 @@ const WindowCollectTour = () => {
         <BlockHeader
           title="Собери свой тур"
           description={
-            <Fragment>
+            <>
               Идейные соображения высшего порядка,
               <br />а также рамки и место обучения кадров
-            </Fragment>
+            </>
           }
         />
         <Formik
@@ -56,12 +55,13 @@ const WindowCollectTour = () => {
               .required("Required"),
           })}
           onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
+            console.log(values);
           }}
         >
           <Form className={styles.input_form}>
             <div className={styles.input_fields}>
               <Input
+                name="firstName"
                 type="text"
                 placeholder="Введите Ваше имя"
                 fieldName="Имя"
@@ -116,7 +116,7 @@ const WindowCollectTour = () => {
                 className={styles.submit_button}
               />
               <Button
-                type="button"
+                type="reset"
                 title="Сбросить"
                 className={styles.reset_button}
               />
