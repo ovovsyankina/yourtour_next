@@ -1,33 +1,45 @@
 import Image from "next/image";
-import { object, string } from "prop-types";
+import { string } from "prop-types";
 import styles from "./ImageCard.module.scss";
 
-const ImageCard = ({ srcImg, children }) => {
+const ImageCard = ({ srcImg, title, description, width, height }) => {
   return (
     <div className={styles.root}>
       <div className={styles.img}>
-        <div
-          className={styles.img_gradient}
-          style={{ width: "370px", height: "531px" }}
-        />
+        <div className={styles.img_gradient} />
         <Image
           src={srcImg}
           alt={srcImg}
-          width="370"
-          height="531"
+          width={width}
+          height={height}
           className={styles.img_card}
         />
       </div>
-      {children}
+      <div className={styles.card_children}>
+        <div>
+          <p className={styles.name_tour}>{title}</p>
+          <div className={styles.prise_tour}>{description}</div>
+        </div>
+        <div className={styles.expand}>
+          <p className={styles.detailed}>Подробнее</p>
+          <Image
+            src="/image/svg/arrow_detailed.svg"
+            alt="arrow_detailed"
+            width="22"
+            height="16"
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
 ImageCard.propTypes = {
   srcImg: string,
-  children: object,
-  width: "370px",
-  height: "531px",
+  title: string,
+  description: string,
+  width: string,
+  height: string,
 };
 
 export default ImageCard;

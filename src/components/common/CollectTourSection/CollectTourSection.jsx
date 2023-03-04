@@ -34,10 +34,10 @@ const CollectTourSection = () => {
             comment: "",
           }}
           validationSchema={Yup.object({
-            firstName: "",
-            direction: Yup.string()
+            firstName: Yup.string()
               .max(15, "Должно быть не более 15 символов")
               .required("Required"),
+            direction: "",
             email: Yup.string()
               .email("Неверный адрес электронной почты")
               .required("Required"),
@@ -54,8 +54,11 @@ const CollectTourSection = () => {
               .max(105, "Должно быть не более 105 символов")
               .required("Required"),
           })}
-          onSubmit={(values) => {
-            console.log(values);
+          onSubmit={(values, { setSubmitting }) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 400);
           }}
         >
           <Form className={styles.input_form}>
@@ -67,25 +70,28 @@ const CollectTourSection = () => {
                 fieldName="Имя"
               />
               <Select
+                name="direction"
                 fieldName="Направление"
                 placeholderOption="Куда хотите ехать"
                 option1="Пункт 1 выбран"
                 option2="Пункт 2 выбран"
               />
               <Input
+                name="email"
                 type="email"
                 placeholder="example@mail.com"
                 fieldName="Email"
               />
               <Input
+                name="phone"
                 type="number"
                 placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
                 fieldName="Телефон"
               />
-              <Input type="date" fieldName="Дата от" />
-              <Input type="date" fieldName="Дата до" />
+              <Input name="dateFrom" type="date" fieldName="Дата от" />
+              <Input name="dateBefore" type="date" fieldName="Дата до" />
             </div>
-            <Textarea fieldName="Комментарий" />
+            <Textarea name="comment" fieldName="Комментарий" />
             <div className={styles.check_age}>
               <div className={styles}>Вам есть 18 лет?</div>
               <div className={styles.buttons_age}>

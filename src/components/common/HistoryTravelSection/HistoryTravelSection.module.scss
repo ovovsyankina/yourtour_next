@@ -24,21 +24,8 @@
   display: flex;
   width: 100%;
   height: 1801px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 50px;
-}
-
-.card_children {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  width: 100%;
-  height: 567px;
-
-  padding: 50px;
-  flex-direction: column;
+  margin-top: 100px;
   justify-content: space-between;
+  flex-direction: column;
   align-items: flex-start;
-  color: $white-color;
 }

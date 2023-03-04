@@ -2,11 +2,11 @@ import Image from "next/image";
 import { string } from "prop-types";
 import styles from "./Select.module.scss";
 
-const Select = ({ fieldName, placeholderOption, option1, option2 }) => {
+const Select = ({ fieldName, placeholderOption, option1, option2, name }) => {
   return (
     <div className={styles.root}>
-      <label>{fieldName}</label>
-      <select className={styles.dropdown} defaultValue="" required>
+      <label htmlFor={name}>{fieldName}</label>
+      <select name={name} className={styles.dropdown} defaultValue="" required>
         <option value="" disabled>
           {placeholderOption}
         </option>
@@ -22,6 +22,7 @@ Select.propTypes = {
   placeholderOption: string,
   option1: string,
   option2: string,
+  name: string,
 };
 
 export default Select;

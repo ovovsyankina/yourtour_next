@@ -1,0 +1,39 @@
+@use "@/styles/color" as *;
+@use "@/styles/fonts" as *;
+
+.root {
+  display: flex;
+  width: 100%;
+  height: 370px;
+  margin-top: 136px;
+  justify-content: center;
+}
+.contact_window {
+  display: flex;
+  width: 771px;
+  height: 370px;
+  flex-direction: row;
+  align-items: center;
+}
+.contact_img {
+  border-radius: 50px;
+}
+.contact_info {
+  margin-left: 30px;
+}
+.contact_header {
+  font-family: Roboto_Medium;
+  font-size: 35px;
+  line-height: 122%;
+}
+
+.contact_email {
+  margin-top: 20px;
+  font-family: Roboto_Regular;
+  font-size: 20px;
+  line-height: 142%;
+  color: $grey-color;
+}
+.contact_email_black {
+  color: $black-color;
+}

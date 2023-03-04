@@ -2,13 +2,19 @@ import Image from "next/image";
 import styles from "./Nav.module.scss";
 import Link from "next/link";
 import { navLinks } from "@/utils/data";
+import { bool, string } from "prop-types";
+import classNames from "classnames";
 
-const Nav = () => {
+const Nav = ({ srcImg, isFix }) => {
   return (
-    <div className={styles.root}>
+    <div
+      className={classNames(styles.root, {
+        [styles.fixed_nav]: isFix,
+      })}
+    >
       <div className={styles.nav}>
         <Image
-          src="/image/svg/logo_yourTour.svg"
+          src={srcImg}
           className={styles.logo}
           alt="logo"
           width="182"
@@ -21,18 +27,31 @@ const Nav = () => {
               <Link
                 href={link.path}
                 key={link.index}
-                className={styles.nav_item}
+                className={classNames(styles.nav_item, {
+                  [styles.nav_item_fix]: isFix,
+                })}
               >
                 {link.name}
               </Link>
             );
           })}
         </nav>
-        <Link href="/" className={styles.phone_number}>
+        <Link
+          href="/"
+          className={classNames(styles.phone_number, {
+            [styles.phone_number_fix]: isFix,
+          })}
+        >
           +7 999 999 99 99
         </Link>
       </div>
     </div>
   );
 };
+
+Nav.propTypes = {
+  srcImg: string,
+  isFix: bool,
+};
+
 export default Nav;

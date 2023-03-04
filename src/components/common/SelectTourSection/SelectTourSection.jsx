@@ -1,7 +1,6 @@
 import styles from "./SelectTourSection.module.scss";
-import { cardsImgSelectTour, tabsSelectTour } from "@/utils/data";
+import { cardsSelectTour, tabsSelectTour } from "@/utils/data";
 import classNames from "classnames";
-import Image from "next/image";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import ImageCard from "../ImageCard/ImageCard";
 
@@ -25,25 +24,16 @@ const SelectTourSection = () => {
           })}
         </div>
         <div className={styles.image_cards}>
-          {cardsImgSelectTour.map((card) => {
+          {cardsSelectTour.map((card) => {
             return (
-              <ImageCard srcImg={card.srcImg} key={card.index}>
-                <div className={styles.card_children}>
-                  <div>
-                    <p className={styles.name_tour}>Путешествие в горы</p>
-                    <p className={styles.prise_tour}>от 80 000 руб</p>
-                  </div>
-                  <div className={styles.expand}>
-                    <p className={styles.detailed}>Подробнее</p>
-                    <Image
-                      src="/image/svg/arrow_detailed.svg"
-                      alt="arrow_detailed"
-                      width="22"
-                      height="16"
-                    />
-                  </div>
-                </div>
-              </ImageCard>
+              <ImageCard
+                key={card.index}
+                srcImg={card.srcImg}
+                title={card.title}
+                description={card.description}
+                width="370"
+                height="531"
+              />
             );
           })}
         </div>

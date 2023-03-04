@@ -34,7 +34,6 @@ input::-webkit-datetime-edit-month-field,
 input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-year-field {
   text-transform: uppercase;
-
   letter-spacing: -0.04em;
 }
 
@@ -48,8 +47,3 @@ input[type="date"] {
     color: $grey-color;
   }
 }
-// input[type="number"] {
-//   &::placeholder {
-//     font-family: "Roboto_Regular";
-//   }
-// }
