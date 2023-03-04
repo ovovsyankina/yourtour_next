@@ -23,4 +23,13 @@
   border: 1px solid $beige200-color;
   border-radius: 10px;
   resize: none;
+
+  &:hover {
+    background: $beige200-color;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: 1px solid $grey-color;
+  }
 }

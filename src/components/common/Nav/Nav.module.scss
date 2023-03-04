@@ -10,20 +10,21 @@
   align-items: center;
   z-index: 2;
 }
+
 .fixed_nav {
   position: fixed;
   display: flex;
-
+  width: 100%;
+  height: 88px;
   justify-content: center;
   align-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 88px;
   background: rgba(243, 239, 232, 0.6);
   backdrop-filter: blur(54px);
   background-position: top;
   z-index: 4;
 }
+
 .nav {
   display: flex;
   width: 1168px;
@@ -33,7 +34,11 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.logo {
+  &:hover {
+    cursor: pointer;
+  }
+}
 .nav_items {
   display: flex;
   width: 468px;
@@ -43,8 +48,21 @@
 .nav_item,
 .phone_number {
   color: $white-color;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 7px;
+  }
 }
+
 .nav_item_fix,
 .phone_number_fix {
   color: $black-color;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 7px;
+  }
 }

@@ -31,8 +31,8 @@ const SelectTourSection = () => {
                 srcImg={card.srcImg}
                 title={card.title}
                 description={card.description}
-                width="370"
-                height="531"
+                // width="370"
+                // height="531"
               />
             );
           })}

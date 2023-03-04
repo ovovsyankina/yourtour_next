@@ -60,4 +60,15 @@
   background: $white-color;
   border: $white-color;
   border-radius: 10px;
+
+  &:hover {
+    background: $orange-color;
+    color: $white-color;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $orange100-color;
+    color: $black-color;
+  }
 }

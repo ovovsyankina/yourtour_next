@@ -2,10 +2,39 @@
 @use "@/styles/fonts" as *;
 
 .root {
+  position: relative;
   display: flex;
   width: 370px;
   height: 531px;
   border-radius: 50px;
+  overflow: hidden;
+
+  &:hover .size_tour {
+    transition: 300ms ease;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  &:hover .expand {
+    width: 199px;
+    height: 42px;
+    padding: 7px 19px;
+    margin: -7px -20px;
+    border: 1px solid $green400-color;
+    z-index: 5;
+    background: $green400-color;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:active {
+      border: 1px solid $orange-color;
+      background: $orange-color;
+    }
+  }
+}
+
+.img {
+  position: relative;
 }
 
 .img_gradient {
@@ -26,8 +55,10 @@
   border-radius: 50px;
 }
 
-.img {
-  position: relative;
+.size_tour {
+  position: absolute;
+  transition: 300ms ease;
+  transform: scale(1);
 }
 
 .card_children {
@@ -35,7 +66,7 @@
   z-index: 3;
   display: flex;
   width: 370px;
-  height: 531px;
+  height: 532px;
   padding: 50px;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +77,6 @@
 .name_tour {
   width: 240px;
   font-family: Roboto_Medium;
-
   font-size: 35px;
   line-height: 122%;
 }

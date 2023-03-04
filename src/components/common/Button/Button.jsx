@@ -1,5 +1,4 @@
 import { string } from "prop-types";
-import styles from "./Button.module.scss";
 
 const Button = ({ title, type, className }) => {
   return (

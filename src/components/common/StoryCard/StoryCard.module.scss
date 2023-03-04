@@ -2,9 +2,35 @@
 @use "@/styles/fonts" as *;
 
 .root {
+  position: relative;
   display: flex;
   width: 1170px;
   height: 567px;
+  border-radius: 50px;
+  overflow: hidden;
+
+  &:hover .size_tour {
+    transition: 300ms ease;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  &:hover .expand {
+    width: 199px;
+    height: 42px;
+    padding: 7px 19px;
+    margin: -7px -20px;
+    border: 1px solid $green400-color;
+    z-index: 5;
+    background: $green400-color;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:active {
+      border: 1px solid $orange-color;
+      background: $orange-color;
+    }
+  }
 }
 
 .img_gradient {
@@ -26,6 +52,12 @@
 .img_card {
   border-radius: 50px;
 }
+.size_tour {
+  position: absolute;
+  transition: 300ms ease;
+  transform: scale(1);
+}
+
 .card_children {
   position: absolute;
   z-index: 3;
@@ -77,7 +109,7 @@
   align-items: center;
 }
 
-.social_network {
+.social_networks {
   display: flex;
   font-family: Roboto_Regular;
   font-size: 20px;
@@ -86,4 +118,14 @@
   justify-content: center;
   align-items: center;
   gap: 35px;
+}
+.social_item {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 7px;
+  }
+  &:active {
+    color: $orange-color;
+  }
 }

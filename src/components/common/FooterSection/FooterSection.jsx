@@ -13,6 +13,7 @@ const FooterSection = () => {
               <div key={network.index} className={styles.network_item}>
                 <Image
                   src={network.srcImg}
+                  alt={network.srcImg}
                   width="26"
                   height="26"
                   className={styles.network_icon}

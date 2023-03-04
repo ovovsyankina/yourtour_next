@@ -106,9 +106,8 @@ const CollectTourSection = () => {
             <div className={styles.licensed_contract}>
               <Checkbox type="checkbox" id="licensed" name="contract">
                 <div className={styles.contract_text}>
-                  Нажимая кнопку, я принимаю условия
+                  Нажимая кнопку, я принимаю условия{" "}
                   <span className={styles.contract_blackText}>
-                    {" "}
                     Лицензионного договора
                   </span>
                 </div>

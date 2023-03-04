@@ -23,13 +23,23 @@
   border: 1px solid $beige200-color;
   border-radius: 10px;
   color: $black-color;
+
   &::placeholder {
     font-family: Roboto_Regular;
     font-style: normal;
     color: $grey-color;
     letter-spacing: -0.005em;
   }
+
   &:invalid {
     letter-spacing: 0;
+  }
+
+  &:hover {
+    background: $beige200-color;
+    cursor: pointer;
+  }
+  &:focus {
+    border: 1px solid $grey-color;
   }
 }

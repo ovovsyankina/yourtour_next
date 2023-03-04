@@ -28,8 +28,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
+  overflow: hidden;
 }
 .img_card {
+  width: 442px;
+  height: 301px;
   border-radius: 50px;
   object-position: center center;
   object-fit: cover;

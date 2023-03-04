@@ -17,10 +17,10 @@ const StoryCard = ({
         <div className={styles.img_gradient} />
         <Image
           src={srcImg}
-          className={styles.img_card}
           alt={srcImg}
           width={width}
           height={height}
+          className={styles.img_card && styles.size_tour}
         />
       </div>
       <div className={styles.card_children}>
@@ -50,9 +50,13 @@ const StoryCard = ({
           </div>
           <div>
             {socialNetwork && (
-              <div className={styles.social_network}>
+              <div className={styles.social_networks}>
                 {socialNetwork.map((social, i) => {
-                  return <p key={i}>{social}</p>;
+                  return (
+                    <p key={i} className={styles.social_item}>
+                      {social}
+                    </p>
+                  );
                 })}
               </div>
             )}

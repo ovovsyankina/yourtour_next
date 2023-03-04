@@ -2,7 +2,7 @@ import Image from "next/image";
 import { string } from "prop-types";
 import styles from "./ImageCard.module.scss";
 
-const ImageCard = ({ srcImg, title, description, width, height }) => {
+const ImageCard = ({ srcImg, title, description }) => {
   return (
     <div className={styles.root}>
       <div className={styles.img}>
@@ -10,9 +10,9 @@ const ImageCard = ({ srcImg, title, description, width, height }) => {
         <Image
           src={srcImg}
           alt={srcImg}
-          width={width}
-          height={height}
-          className={styles.img_card}
+          width="370"
+          height="531"
+          className={styles.img_card && styles.size_tour}
         />
       </div>
       <div className={styles.card_children}>
@@ -38,8 +38,6 @@ ImageCard.propTypes = {
   srcImg: string,
   title: string,
   description: string,
-  width: string,
-  height: string,
 };
 
 export default ImageCard;

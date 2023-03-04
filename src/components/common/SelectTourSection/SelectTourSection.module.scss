@@ -34,6 +34,12 @@
   font-size: 23px;
   line-height: 122%;
   color: #1b1f2b;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 2px;
+    text-underline-offset: 10px;
+  }
 }
 
 .active_button {

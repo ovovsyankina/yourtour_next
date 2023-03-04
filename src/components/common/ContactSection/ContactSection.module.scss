@@ -36,4 +36,13 @@
 }
 .contact_email_black {
   color: $black-color;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
+  }
+  &:active {
+    color: $green400-color;
+  }
 }

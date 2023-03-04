@@ -7,6 +7,7 @@ const ContactSection = () => {
       <div className={styles.contact_window}>
         <Image
           src="/image/contact_foto.jpg"
+          alt="contact_foto"
           width="370"
           height="370"
           className={styles.contact_img}

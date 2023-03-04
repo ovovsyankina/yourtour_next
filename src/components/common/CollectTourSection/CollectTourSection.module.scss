@@ -43,6 +43,7 @@
   line-height: 142%;
   color: $black-color;
 }
+
 .buttons_age {
   display: flex;
   width: 166px;
@@ -64,14 +65,24 @@
   justify-content: center;
   align-items: center;
 }
+
 .contract_text {
   margin-left: 8px;
   letter-spacing: -0.01em;
   color: $grey-color;
 }
+
 .contract_blackText {
   color: $black-color;
   letter-spacing: -0.01em;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 4px;
+  }
+  &:active {
+    color: $green400-color;
+  }
 }
 
 .completion_buttons {
@@ -88,7 +99,6 @@
   display: flex;
   width: 235px;
   height: 58px;
-
   justify-content: center;
   align-items: center;
   padding: 15px 30px;
@@ -98,6 +108,15 @@
   color: $white-color;
   background: $green400-color;
   border-radius: 10px;
+
+  &:hover {
+    background: $green300-color;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $green200-color;
+  }
 }
 
 .reset_button {
@@ -113,4 +132,13 @@
   color: $green400-color;
   background: $green100-color;
   border-radius: 10px;
+
+  &:hover {
+    background: $grey100-color;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: $grey200-color;
+  }
 }

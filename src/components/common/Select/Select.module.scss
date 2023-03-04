@@ -31,7 +31,17 @@
   outline: 0;
   appearance: none;
   color: $black-color;
+
   &:invalid {
     color: $grey-color;
+  }
+
+  &:hover {
+    background-color: $beige200-color;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: 1px solid $grey-color;
   }
 }

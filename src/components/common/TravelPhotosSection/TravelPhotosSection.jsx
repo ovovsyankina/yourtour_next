@@ -23,6 +23,8 @@ const TravelPhotosSection = () => {
             return (
               <Image
                 src={img.srcImg}
+                alt={img.srcImg}
+                key={img.index}
                 width="442"
                 height="301"
                 className={classNames(styles.img_card, {

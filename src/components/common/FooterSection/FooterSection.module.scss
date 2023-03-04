@@ -11,6 +11,7 @@
   align-items: center;
   background: $beige200-color;
 }
+
 .footer_window {
   display: flex;
   width: 1168px;
@@ -29,6 +30,7 @@
   line-height: 142%;
   color: $grey-color;
 }
+
 .social_networks {
   display: flex;
   width: 419px;
@@ -37,14 +39,17 @@
   align-items: center;
   justify-content: space-between;
 }
+
 .network_item {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .network_icon {
   margin-bottom: 3px;
 }
+
 .network_title {
   margin-left: 10px;
   font-family: Roboto_Regular;
@@ -53,4 +58,10 @@
   font-size: 20px;
   line-height: 142%;
   color: $black-color;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline 1px;
+    text-underline-offset: 7px;
+  }
 }

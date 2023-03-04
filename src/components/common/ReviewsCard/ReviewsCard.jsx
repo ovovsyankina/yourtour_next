@@ -13,6 +13,7 @@ const ReviewsCard = ({ author, imgAuthor, nameTour, review }) => {
         </div>
         <Image
           src={imgAuthor}
+          alt={imgAuthor}
           width="75"
           height="75"
           className={styles.img_author}

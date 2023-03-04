@@ -4,7 +4,6 @@ import Nav from "../Nav/Nav";
 import Button from "../Button/Button";
 
 const HeaderSection = ({ isFixedMenu }) => {
-  console.log(isFixedMenu);
   return (
     <>
       <div className={styles.root}>
