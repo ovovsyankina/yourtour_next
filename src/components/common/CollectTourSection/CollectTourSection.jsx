@@ -9,8 +9,6 @@ import Checkbox from "../Checkbox/Checkbox";
 import Button from "../Button/Button";
 
 const CollectTourSection = () => {
-  const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   return (
     <div className={styles.root}>
       <div className={styles.collectTour_window}>
@@ -26,107 +24,174 @@ const CollectTourSection = () => {
         <Formik
           initialValues={{
             firstName: "",
-            direction: "",
             email: "",
             phone: "",
             dateFrom: "",
             dateBefore: "",
             comment: "",
+            is18: "",
+            isAgree: false,
           }}
           validationSchema={Yup.object({
             firstName: Yup.string()
-              .max(15, "Должно быть не более 15 символов")
-              .required("Required"),
-            direction: "",
+              .max(15, "Имя не должно превышать 15 символов")
+              .required("Введите имя"),
+
             email: Yup.string()
               .email("Неверный адрес электронной почты")
-              .required("Required"),
-            phone: Yup.string().matches(
-              phoneRegExp,
-              "Номер телефона введен неверно"
-            ),
-            dateFrom: Yup.date(),
-            dateBefore: Yup.date().min(
-              Yup.ref("dateFrom"),
-              "Дата окончания не может быть раньше даты начала"
-            ),
-            comment: Yup.string()
-              .max(105, "Должно быть не более 105 символов")
-              .required("Required"),
+              .required("Введите адрес электронной почты"),
+            phone: Yup.string()
+              .matches(/(\+7)[0-9]{3}[0-9]{4}/, "Номер телефона введен неверно")
+              .required("Введите свой номер телефона"),
+
+            dateFrom: Yup.date().required("Введите дату начала"),
+
+            dateBefore: Yup.date()
+              .required("Введите дату окончания")
+              .min(
+                Yup.ref("dateFrom"),
+                "Дата окончания не может быть раньше времени начала"
+              ),
+            comment: Yup.string().max(105, "Должно быть не более 105 символов"),
+            is18: Yup.string().required("Выберите значение"),
+            isAgree: Yup.bool()
+              .oneOf([true], "Поставьте галочку")
+              .required("Выберите значение"),
           })}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
+          onSubmit={(values, { resetForm }) => {
+            console.log(values);
+            resetForm();
           }}
         >
-          <Form className={styles.input_form}>
-            <div className={styles.input_fields}>
-              <Input
-                name="firstName"
-                type="text"
-                placeholder="Введите Ваше имя"
-                fieldName="Имя"
+          {({ values, errors, handleChange, touched, setFieldValue }) => (
+            <Form className={styles.input_form}>
+              <div className={styles.input_fields}>
+                <Input
+                  name="firstName"
+                  type="text"
+                  placeholder="Введите Ваше имя"
+                  fieldName="Имя"
+                  onChange={handleChange}
+                  value={values.firstName}
+                  errors={errors.firstName}
+                  touched={touched.firstName}
+                />
+                {console.log(errors)}
+                <Select
+                  name="direction"
+                  fieldName="Направление"
+                  placeholderOption="Куда хотите ехать"
+                  option1="Пункт 1 выбран"
+                  option2="Пункт 2 выбран"
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="example@mail.com"
+                  fieldName="Email"
+                  onChange={handleChange}
+                  value={values.email}
+                  errors={errors.email}
+                  touched={touched.email}
+                />
+                <Input
+                  name="phone"
+                  type="tel"
+                  placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
+                  fieldName="Телефон"
+                  onChange={handleChange}
+                  value={values.phone}
+                  errors={errors.phone}
+                  touched={touched.phone}
+                />
+                <Input
+                  name="dateFrom"
+                  type="date"
+                  fieldName="Дата от"
+                  onChange={handleChange}
+                  value={values.dateFrom}
+                  errors={errors.dateFrom}
+                  touched={touched.dateFrom}
+                />
+                <Input
+                  name="dateBefore"
+                  type="date"
+                  fieldName="Дата до"
+                  onChange={handleChange}
+                  value={values.dateBefore}
+                  errors={errors.dateBefore}
+                  touched={touched.dateBefore}
+                />
+              </div>
+              <Textarea
+                name="comment"
+                fieldName="Комментарий"
+                onChange={handleChange}
+                value={values.comment}
               />
-              <Select
-                name="direction"
-                fieldName="Направление"
-                placeholderOption="Куда хотите ехать"
-                option1="Пункт 1 выбран"
-                option2="Пункт 2 выбран"
-              />
-              <Input
-                name="email"
-                type="email"
-                placeholder="example@mail.com"
-                fieldName="Email"
-              />
-              <Input
-                name="phone"
-                type="number"
-                placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
-                fieldName="Телефон"
-              />
-              <Input name="dateFrom" type="date" fieldName="Дата от" />
-              <Input name="dateBefore" type="date" fieldName="Дата до" />
-            </div>
-            <Textarea name="comment" fieldName="Комментарий" />
-            <div className={styles.check_age}>
-              <div className={styles}>Вам есть 18 лет?</div>
-              <div className={styles.buttons_age}>
-                <Checkbox type="radio" id="yes" name="age">
-                  <div>Да</div>
-                </Checkbox>
-                <Checkbox textButton="Нет" type="radio" id="no" name="age">
-                  <div>Нет</div>
-                </Checkbox>
-              </div>{" "}
-            </div>
-            <div className={styles.licensed_contract}>
-              <Checkbox type="checkbox" id="licensed" name="contract">
-                <div className={styles.contract_text}>
-                  Нажимая кнопку, я принимаю условия{" "}
-                  <span className={styles.contract_blackText}>
-                    Лицензионного договора
-                  </span>
+              <div className={styles.check_age}>
+                <div className={styles}>Вам есть 18 лет?</div>
+                <div className={styles.buttons_age}>
+                  <Checkbox
+                    type="radio"
+                    id="yes"
+                    name="is18"
+                    onChange={() => setFieldValue("is18", "yes")}
+                    checked={values.is18 === "yes"}
+                  >
+                    <div>Да</div>
+                  </Checkbox>
+                  <Checkbox
+                    type="radio"
+                    id="no"
+                    name="is18"
+                    onChange={() => setFieldValue("is18", "no")}
+                    checked={values.is18 === "no"}
+                  >
+                    <div>Нет</div>
+                  </Checkbox>
                 </div>
-              </Checkbox>
-            </div>
-
-            <div className={styles.completion_buttons}>
-              <Button
-                type="submit"
-                title="Найти тур"
-                className={styles.submit_button}
-              />
-              <Button
-                type="reset"
-                title="Сбросить"
-                className={styles.reset_button}
-              />
-            </div>
-          </Form>
+                {errors.is18 && touched.is18 && (
+                  <div className={styles.error_message}>{errors.is18}</div>
+                )}
+              </div>
+              <div className={styles.licensed_contract}>
+                <div className={styles.block_isAgree}>
+                  <Checkbox
+                    type="checkbox"
+                    id="licensed"
+                    name="isAgree"
+                    onChange={(e) =>
+                      setFieldValue("isAgree", e.currentTarget.checked)
+                    }
+                    checked={values.isAgree}
+                  >
+                    <div className={styles.contract_text}>
+                      Нажимая кнопку, я принимаю условия{" "}
+                      <span className={styles.contract_blackText}>
+                        Лицензионного договора
+                      </span>
+                    </div>
+                  </Checkbox>
+                </div>
+                {errors.isAgree && touched.isAgree && (
+                  <div className={styles.error_message}>{errors.isAgree}</div>
+                )}
+              </div>
+              <div className={styles.completion_buttons}>
+                <Button
+                  type="submit"
+                  title="Найти тур"
+                  className={styles.submit_button}
+                />
+                <Button
+                  type="reset"
+                  title="Сбросить"
+                  className={styles.reset_button}
+                />
+              </div>
+            </Form>
+          )}
         </Formik>
       </div>
     </div>

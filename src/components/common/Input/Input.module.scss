@@ -4,7 +4,7 @@
 .root {
   display: flex;
   width: 500px;
-  height: 104px;
+  height: 124px;
   flex-direction: column;
   font-family: Roboto_Regular;
   font-size: 20px;
@@ -26,7 +26,6 @@
 
   &::placeholder {
     font-family: Roboto_Regular;
-    font-style: normal;
     color: $grey-color;
     letter-spacing: -0.005em;
   }
@@ -42,4 +41,11 @@
   &:focus {
     border: 1px solid $grey-color;
   }
+}
+
+.error_message {
+  font-family: Roboto_Regular;
+  font-size: 15px;
+  line-height: 142%;
+  color: red;
 }

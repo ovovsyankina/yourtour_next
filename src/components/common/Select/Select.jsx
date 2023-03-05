@@ -6,7 +6,7 @@ const Select = ({ fieldName, placeholderOption, option1, option2, name }) => {
   return (
     <div className={styles.root}>
       <label htmlFor={name}>{fieldName}</label>
-      <select name={name} className={styles.dropdown} defaultValue="" required>
+      <select name={name} className={styles.dropdown} defaultValue="">
         <option value="" disabled>
           {placeholderOption}
         </option>

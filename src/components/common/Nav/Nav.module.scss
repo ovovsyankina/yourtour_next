@@ -33,6 +33,10 @@
   font-size: 20px;
   justify-content: space-between;
   align-items: center;
+
+  @include tablet {
+    width: 89%;
+  }
 }
 .logo {
   &:hover {
@@ -43,6 +47,9 @@
   display: flex;
   width: 468px;
   justify-content: space-between;
+  @include tablet {
+    width: 44.8%;
+  }
 }
 
 .nav_item,

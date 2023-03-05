@@ -1,7 +1,16 @@
-import { string } from "prop-types";
+import { bool, func, string } from "prop-types";
 import styles from "./Input.module.scss";
 
-const Input = ({ type, placeholder, fieldName, name }) => {
+const Input = ({
+  type,
+  placeholder,
+  fieldName,
+  name,
+  onChange,
+  value,
+  errors,
+  touched,
+}) => {
   return (
     <div className={styles.root}>
       <label htmlFor={name}>{fieldName}</label>
@@ -10,8 +19,12 @@ const Input = ({ type, placeholder, fieldName, name }) => {
         type={type}
         className={styles.input_field}
         placeholder={placeholder}
-        required
+        onChange={onChange}
+        value={value}
       />
+      {{ errors } && { touched } && (
+        <div className={styles.error_message}>{errors}</div>
+      )}
     </div>
   );
 };
@@ -21,6 +34,10 @@ Input.propTypes = {
   placeholder: string,
   fieldName: string,
   name: string,
+  onChange: func,
+  value: string,
+  errors: string,
+  touched: bool,
 };
 
 export default Input;

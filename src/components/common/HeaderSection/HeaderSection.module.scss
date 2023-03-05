@@ -45,6 +45,10 @@
   line-height: 142%;
   text-align: center;
   color: $white-color;
+
+  @include tablet {
+    width: 442px;
+  }
 }
 
 .button_searchTour {

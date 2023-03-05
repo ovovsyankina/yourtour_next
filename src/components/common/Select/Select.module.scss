@@ -4,7 +4,7 @@
 .root {
   display: flex;
   width: 500px;
-  height: 104px;
+  height: 124px;
   flex-direction: column;
   align-items: flex-start;
   font-family: Roboto_Regular;
@@ -40,7 +40,6 @@
     background-color: $beige200-color;
     cursor: pointer;
   }
-
   &:focus {
     border: 1px solid $grey-color;
   }

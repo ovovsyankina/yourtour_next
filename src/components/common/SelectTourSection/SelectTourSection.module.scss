@@ -1,9 +1,10 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
+@use "@/styles/fonts" as *;
 
 .root {
   display: flex;
   width: 100%;
-  height: 1334px;
   margin-top: 135px;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +18,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include tablet {
+    width: 90%;
+    height: 1871px;
+  }
 }
 
 .tabs_items {
@@ -50,11 +55,15 @@
 
 .image_cards {
   display: flex;
-  width: 1170px;
+  width: 100%;
   height: 1092px;
   margin-top: 100px;
   flex-direction: row;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 30px;
+  @include tablet {
+    gap: 18px;
+    height: 1629px;
+  }
 }

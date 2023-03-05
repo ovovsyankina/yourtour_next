@@ -21,16 +21,14 @@ const TravelPhotosSection = () => {
         <div className={styles.travel_photos}>
           {imgTravelPhoto.map((img) => {
             return (
-              <Image
-                src={img.srcImg}
-                alt={img.srcImg}
+              <div
                 key={img.index}
-                width="442"
-                height="301"
                 className={classNames(styles.img_card, {
                   [styles.img_card_small]: img.smallImage,
                 })}
-              />
+              >
+                <Image src={img.srcImg} alt={img.srcImg} fill />
+              </div>
             );
           })}
         </div>

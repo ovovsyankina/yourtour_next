@@ -10,9 +10,8 @@ const ImageCard = ({ srcImg, title, description }) => {
         <Image
           src={srcImg}
           alt={srcImg}
-          width="370"
-          height="531"
           className={styles.img_card && styles.size_tour}
+          fill
         />
       </div>
       <div className={styles.card_children}>
