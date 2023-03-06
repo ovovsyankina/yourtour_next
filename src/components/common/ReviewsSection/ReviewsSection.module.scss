@@ -10,14 +10,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include tablet {
     width: 100%;
     height: 1173px;
   }
+
   @include small_tablet {
     margin-top: 75px;
     height: 860px;
   }
+
   @include mobile {
     height: 1210px;
   }
@@ -30,9 +33,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include tablet {
     width: 89.7%;
   }
+
   @include mobile {
     width: 318px;
   }
@@ -46,9 +51,11 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+
   @include tablet {
     height: 841px;
   }
+
   @include small_tablet {
     margin-top: 50px;
   }

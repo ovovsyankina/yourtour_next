@@ -1,6 +1,6 @@
+import styles from "./ReviewsCard.module.scss";
 import Image from "next/image";
 import { object, string } from "prop-types";
-import styles from "./ReviewsCard.module.scss";
 
 const ReviewsCard = ({ author, imgAuthor, nameTour, review }) => {
   return (

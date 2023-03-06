@@ -1,4 +1,4 @@
-import { string } from "prop-types";
+import { func, string } from "prop-types";
 import styles from "./Textarea.module.scss";
 
 const Textarea = ({ fieldName, name, value, onChange }) => {
@@ -15,6 +15,11 @@ const Textarea = ({ fieldName, name, value, onChange }) => {
   );
 };
 
-Textarea.propTypes = { fieldName: string, name: string };
+Textarea.propTypes = {
+  fieldName: string,
+  name: string,
+  value: string,
+  onChange: func,
+};
 
 export default Textarea;

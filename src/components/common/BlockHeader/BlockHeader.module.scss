@@ -11,15 +11,18 @@
 
 .title_block {
   width: 730px;
+
   @include small_tablet {
     width: 100%;
   }
+
   @include mobile {
     font-size: 34px;
     line-height: 112%;
     letter-spacing: 0.02em;
   }
 }
+
 .description_block {
   width: 418px;
   height: 56px;
@@ -29,6 +32,7 @@
   line-height: 142%;
   text-align: center;
   color: $grey-color;
+
   @include mobile {
     width: 100%;
     height: 46px;

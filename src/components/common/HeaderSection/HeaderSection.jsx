@@ -2,6 +2,7 @@ import styles from "./HeaderSection.module.scss";
 import Image from "next/image";
 import Nav from "../Nav/Nav";
 import Button from "../Button/Button";
+import { bool } from "prop-types";
 
 const HeaderSection = ({ isFixedMenu }) => {
   return (
@@ -35,4 +36,9 @@ const HeaderSection = ({ isFixedMenu }) => {
     </>
   );
 };
+
+HeaderSection.propTypes = {
+  isFixedMenu: bool,
+};
+
 export default HeaderSection;

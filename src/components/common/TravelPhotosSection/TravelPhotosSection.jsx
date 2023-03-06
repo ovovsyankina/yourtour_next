@@ -1,8 +1,8 @@
+import styles from "./TravelPhotosSection.module.scss";
 import { imgTravelPhoto } from "@/utils/data";
 import classNames from "classnames";
 import Image from "next/image";
 import BlockHeader from "../BlockHeader/BlockHeader";
-import styles from "./TravelPhotosSection.module.scss";
 
 const TravelPhotosSection = () => {
   return (
@@ -24,7 +24,8 @@ const TravelPhotosSection = () => {
                 key={img.index}
                 className={classNames(styles.img_card, {
                   [styles.img_card_small]: img.smallImage,
-                  [styles.img_card_none]: img.noneTablet || img.noneMobile,
+                  [styles.img_card_Tablenone]: img.noneTablet,
+                  [styles.img_card_Mobilenone]: img.noneMobile,
                 })}
               >
                 <Image

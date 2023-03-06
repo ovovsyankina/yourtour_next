@@ -6,6 +6,7 @@
   height: 28px;
   flex-direction: row;
   align-items: center;
+
   @include mobile {
     height: auto;
   }
@@ -18,16 +19,20 @@
   height: 26px;
   margin-right: 11px;
   color: $black-color;
+
   @include mobile {
     margin-right: 4px;
   }
+
   &:hover {
     cursor: pointer;
   }
 }
+
 .radio_button {
   display: none;
 }
+
 .radio_button + label::before {
   display: inline-block;
   content: "";
@@ -36,15 +41,16 @@
   min-width: 26px;
   min-height: 26px;
   background-image: url("../../../../public/image/svg/Ellipse_radio.svg");
+
   @include mobile {
     width: 20px;
     height: 20px;
     min-width: 20px;
     min-height: 21px;
-
     background-image: url("../../../../public/image/svg//Ellipse_radio_mobile.svg");
   }
 }
+
 .radio_button:checked + label::after {
   display: flex;
   align-items: center;
@@ -56,6 +62,7 @@
   min-width: 26px;
   min-height: 26px;
   background-image: url("../../../../public/image/svg/radiobutton.svg");
+
   @include mobile {
     width: 20px;
     height: 20px;
@@ -74,6 +81,7 @@
   align-items: center;
   user-select: none;
 }
+
 .checkbox_button + label::before {
   content: "";
   display: inline-block;
@@ -87,6 +95,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
+
   @include mobile {
     width: 16px;
     height: 16px;
@@ -100,6 +109,7 @@
   background-image: url("../../../../public/image/svg/check_dogovor.svg");
   background-size: 70%;
   background-position: center;
+
   @include mobile {
     background-image: url("../../../../public/image/svg/check_dogovor_mobile.svg");
   }

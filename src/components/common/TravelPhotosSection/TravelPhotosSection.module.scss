@@ -10,13 +10,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include small_tablet {
     margin-top: 75px;
   }
+
   @include mobile {
     height: 558px;
   }
 }
+
 .travelPhoto_window {
   display: flex;
   width: calc(100% - 60px);
@@ -24,10 +27,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   @include tablet {
     width: calc(100% - 40px);
   }
 }
+
 .travel_photos {
   display: flex;
   height: 963px;
@@ -38,54 +43,68 @@
   justify-content: space-between;
   align-content: space-between;
   overflow: hidden;
+
   @include small_tablet {
     margin-top: 50px;
   }
 }
+
 .img_card {
   position: relative;
   width: 23.78%;
   height: 301px;
+
   @include tablet {
     width: 31.9%;
   }
+
   @include small_tablet {
     width: 49%;
   }
+
   @include mobile {
     width: 150px;
     height: 110px;
   }
 }
+
 .img_card_small {
   width: 18.7%;
   height: 301px;
+
   @include tablet {
     width: 23.45%;
   }
+
   @include small_tablet {
     width: 32%;
   }
+
   @include mobile {
     width: 99.33px;
     height: 110px;
   }
 }
+
 .img {
   width: 100%;
   height: 100%;
   border-radius: 50px;
   object-position: center center;
   object-fit: cover;
+
   @include mobile {
     border-radius: 20px;
   }
 }
 
-.img_card_none {
+.img_card_Tablenone {
   @include tablet {
     display: none;
   }
+}
+
+.img_card_Mobilenone {
   @include small_tablet {
     display: none;
   }

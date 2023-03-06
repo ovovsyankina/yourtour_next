@@ -16,16 +16,6 @@ const HomePageContainer = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   });
-  //   const [isFixedMenu, setFixedMenu] = useState(false);
-  //   useEffect(() => {
-  //     window.addEventListener("scroll", () => {
-  //       if (window.pageYOffset >= 450) {
-  //         setFixedMenu(true);
-  //       } else {
-  //         setFixedMenu(false);
-  //       }
-  //     });
-  //   }, []);
 
   return <HomePage isFixedMenu={scrolled} />;
 };

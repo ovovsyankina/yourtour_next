@@ -1,6 +1,6 @@
+import styles from "./FooterSection.module.scss";
 import { socialNetwork } from "@/utils/data";
 import Image from "next/image";
-import styles from "./FooterSection.module.scss";
 
 const FooterSection = () => {
   return (

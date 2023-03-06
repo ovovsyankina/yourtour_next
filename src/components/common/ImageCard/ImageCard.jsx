@@ -1,6 +1,6 @@
+import styles from "./ImageCard.module.scss";
 import Image from "next/image";
 import { string } from "prop-types";
-import styles from "./ImageCard.module.scss";
 
 const ImageCard = ({ srcImg, title, description }) => {
   return (

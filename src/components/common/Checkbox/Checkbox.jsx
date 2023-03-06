@@ -1,6 +1,6 @@
-import classNames from "classnames";
-import { object, string } from "prop-types";
 import styles from "./Checkbox.module.scss";
+import classNames from "classnames";
+import { bool, func, object, string } from "prop-types";
 
 const Checkbox = ({ type, id, name, children, onChange, checked }) => {
   return (
@@ -27,6 +27,8 @@ Checkbox.propTypes = {
   type: string,
   id: string,
   name: string,
+  onChange: func,
+  checked: bool,
 };
 
 export default Checkbox;

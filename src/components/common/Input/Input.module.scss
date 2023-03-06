@@ -11,15 +11,18 @@
   font-size: 20px;
   line-height: 142%;
   color: $black-color;
+
   @include tablet {
     width: 48.8%;
   }
+
   @include small_tablet {
     font-size: 18px;
   }
+
   @include mobile {
     width: 278px;
-    height: 74px;
+    height: 92px;
     font-size: 16px;
   }
 }
@@ -35,11 +38,13 @@
   border: 1px solid $beige200-color;
   border-radius: 10px;
   color: $black-color;
+
   @include mobile {
-    height: 43px;
-    padding: 10px;
+    height: 44px;
+    padding: 9px;
     font-size: 16px;
   }
+
   &::placeholder {
     font-family: Roboto_Regular;
     color: $grey-color;
@@ -54,6 +59,7 @@
     background: $beige200-color;
     cursor: pointer;
   }
+
   &:focus {
     border: 1px solid $grey-color;
   }
@@ -64,4 +70,8 @@
   font-size: 15px;
   line-height: 142%;
   color: $red-color;
+
+  @include mobile {
+    font-size: 9px;
+  }
 }

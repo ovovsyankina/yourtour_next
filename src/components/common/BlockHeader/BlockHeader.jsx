@@ -1,5 +1,5 @@
-import { object, string } from "prop-types";
 import styles from "./BlockHeader.module.scss";
+import { object, string } from "prop-types";
 
 const BlockHeader = ({ title, description }) => {
   return (

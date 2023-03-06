@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { string } from "prop-types";
 import styles from "./Select.module.scss";
+import { string } from "prop-types";
 
 const Select = ({ fieldName, placeholderOption, option1, option2, name }) => {
   return (

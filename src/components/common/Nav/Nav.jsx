@@ -1,5 +1,5 @@
-import Image from "next/image";
 import styles from "./Nav.module.scss";
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/utils/data";
 import { bool, string } from "prop-types";

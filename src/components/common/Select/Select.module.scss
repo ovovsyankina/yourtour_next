@@ -12,12 +12,14 @@
   font-size: 20px;
   line-height: 142%;
   color: $black-color;
+
   @include tablet {
     width: 48.8%;
   }
+
   @include mobile {
     width: 278px;
-    height: 74px;
+    height: 92px;
     font-size: 16px;
   }
 }
@@ -40,16 +42,19 @@
   outline: 0;
   appearance: none;
   color: $black-color;
+
   @include small_tablet {
     font-size: 18px;
   }
+
   @include mobile {
-    height: 43px;
+    height: 48px;
     padding: 10px;
     font-size: 16px;
     background-position-x: calc(100% - 14px);
     background-position-y: calc(100% - 13px);
   }
+
   &:invalid {
     color: $grey-color;
   }
@@ -58,6 +63,7 @@
     background-color: $beige200-color;
     cursor: pointer;
   }
+
   &:focus {
     border: 1px solid $grey-color;
   }
