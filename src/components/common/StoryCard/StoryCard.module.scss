@@ -1,4 +1,5 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 @use "@/styles/fonts" as *;
 
 .root {
@@ -8,6 +9,13 @@
   height: 567px;
   border-radius: 50px;
   overflow: hidden;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    height: 455px;
+    border-radius: 20px;
+  }
 
   &:hover .size_tour {
     transition: 300ms ease;
@@ -44,16 +52,34 @@
     rgba(0, 0, 0, 0.2) 100%
   );
   border-radius: 50px;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    height: 455px;
+    border-radius: 20px;
+  }
 }
 
 .img {
   position: relative;
+  width: 1170px;
+  height: 567px;
+
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    height: 455px;
+  }
 }
 .img_card {
   border-radius: 50px;
+  @include mobile {
+    border-radius: 20px;
+  }
 }
 .size_tour {
-  position: absolute;
   transition: 300ms ease;
   transform: scale(1);
 }
@@ -69,16 +95,32 @@
   justify-content: space-between;
   align-items: flex-start;
   color: $white-color;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    height: 452px;
+    padding: 30px;
+  }
 }
 
 .name_tour {
   font-family: Roboto_Medium;
   font-size: 35px;
   line-height: 122%;
+  @include mobile {
+    width: 150px;
+    font-size: 23px;
+    line-height: 120%;
+    letter-spacing: 0.04em;
+  }
 }
 .ul_dop {
   margin: 26px 0 0 29px;
   list-style: disc;
+  @include mobile {
+    margin: 26px 0 0 24px;
+  }
 }
 .description_tour {
   width: 554px;
@@ -87,6 +129,13 @@
   font-family: Roboto_Regular;
   font-size: 20px;
   line-height: 142%;
+  @include small_tablet {
+    width: 100%;
+    font-size: 16px;
+  }
+  @include mobile {
+    margin-top: 20px;
+  }
 }
 
 .bottom_block {
@@ -101,6 +150,9 @@
   font-family: Roboto_Bold;
   font-size: 23px;
   line-height: 122%;
+  @include small_tablet {
+    font-size: 16px;
+  }
 }
 
 .expand {
@@ -118,6 +170,12 @@
   justify-content: center;
   align-items: center;
   gap: 35px;
+  @include small_tablet {
+    font-size: 16px;
+  }
+  @include mobile {
+    display: none;
+  }
 }
 .social_item {
   &:hover {

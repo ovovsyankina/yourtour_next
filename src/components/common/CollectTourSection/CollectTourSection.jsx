@@ -76,7 +76,6 @@ const CollectTourSection = () => {
                   errors={errors.firstName}
                   touched={touched.firstName}
                 />
-                {console.log(errors)}
                 <Select
                   name="direction"
                   fieldName="Направление"

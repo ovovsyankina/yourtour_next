@@ -9,6 +9,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include small_tablet {
+    margin-top: 75px;
+  }
 }
 
 .selectTour_window {
@@ -22,6 +25,12 @@
     width: 90%;
     height: 1871px;
   }
+  @include small_tablet {
+    height: 1472px;
+  }
+  @include mobile {
+    height: 100%;
+  }
 }
 
 .tabs_items {
@@ -32,6 +41,17 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  @include small_tablet {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  @include mobile {
+    height: 56px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 
 .tab_item {
@@ -39,7 +59,13 @@
   font-size: 23px;
   line-height: 122%;
   color: #1b1f2b;
-
+  @include small_tablet {
+    font-size: 21px;
+    line-height: 142%;
+  }
+  @include mobile {
+    font-size: 16px;
+  }
   &:hover {
     cursor: pointer;
     text-decoration: underline 2px;
@@ -51,6 +77,9 @@
   color: $orange-color;
   text-decoration: underline 2px;
   text-underline-offset: 10px;
+  @include mobile {
+    text-underline-offset: 4px;
+  }
 }
 
 .image_cards {
@@ -65,5 +94,13 @@
   @include tablet {
     gap: 18px;
     height: 1629px;
+  }
+  @include small_tablet {
+    margin-top: 50px;
+    justify-content: space-between;
+  }
+  @include mobile {
+    width: 318px;
+    height: 1998px;
   }
 }

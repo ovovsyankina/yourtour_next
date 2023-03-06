@@ -1,7 +1,6 @@
 import { imgTravelPhoto } from "@/utils/data";
 import classNames from "classnames";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 import BlockHeader from "../BlockHeader/BlockHeader";
 import styles from "./TravelPhotosSection.module.scss";
 
@@ -25,9 +24,16 @@ const TravelPhotosSection = () => {
                 key={img.index}
                 className={classNames(styles.img_card, {
                   [styles.img_card_small]: img.smallImage,
+                  [styles.img_card_none]: img.noneTablet || img.noneMobile,
                 })}
               >
-                <Image src={img.srcImg} alt={img.srcImg} fill />
+                <Image
+                  src={img.srcImg}
+                  alt={img.srcImg}
+                  width="442"
+                  height="301"
+                  className={styles.img}
+                />
               </div>
             );
           })}

@@ -8,8 +8,6 @@ const StoryCard = ({
   description,
   descriptionDop,
   socialNetwork,
-  width,
-  height,
 }) => {
   return (
     <div className={styles.root}>
@@ -18,8 +16,7 @@ const StoryCard = ({
         <Image
           src={srcImg}
           alt={srcImg}
-          width={width}
-          height={height}
+          fill
           className={styles.img_card && styles.size_tour}
         />
       </div>
@@ -72,8 +69,6 @@ StoryCard.propTypes = {
   title: string,
   description: string,
   descriptionDop: array,
-  width: string,
-  height: string,
   socialNetwork: array,
 };
 

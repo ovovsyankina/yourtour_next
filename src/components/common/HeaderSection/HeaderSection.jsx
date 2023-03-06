@@ -14,11 +14,9 @@ const HeaderSection = ({ isFixedMenu }) => {
           fill
           priority
         />
-        {isFixedMenu ? (
-          <Nav srcImg="/image/svg/logoFix_yourTour.svg" isFix />
-        ) : (
-          <Nav srcImg="/image/svg/logo_yourTour.svg" />
-        )}
+        {isFixedMenu && <Nav srcImg="/image/svg/logoFix_yourTour.svg" isFix />}
+
+        <Nav srcImg="/image/svg/logo_yourTour.svg" />
         <div className={styles.header_bottom}>
           <h1 className={styles.header_slogan}>
             Идеальные путешествия существуют

@@ -26,8 +26,6 @@ const HistoryTravelSection = () => {
                 description={card.description}
                 descriptionDop={card.descriptionDop}
                 socialNetwork={card.socialNetwork}
-                width="1170"
-                height="567"
               />
             );
           })}

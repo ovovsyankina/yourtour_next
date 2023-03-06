@@ -1,10 +1,14 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 
 .root {
   display: flex;
   height: 28px;
   flex-direction: row;
   align-items: center;
+  @include mobile {
+    height: auto;
+  }
 }
 
 .label_button {
@@ -14,6 +18,9 @@
   height: 26px;
   margin-right: 11px;
   color: $black-color;
+  @include mobile {
+    margin-right: 4px;
+  }
   &:hover {
     cursor: pointer;
   }
@@ -29,6 +36,14 @@
   min-width: 26px;
   min-height: 26px;
   background-image: url("../../../../public/image/svg/Ellipse_radio.svg");
+  @include mobile {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 21px;
+
+    background-image: url("../../../../public/image/svg//Ellipse_radio_mobile.svg");
+  }
 }
 .radio_button:checked + label::after {
   display: flex;
@@ -41,6 +56,13 @@
   min-width: 26px;
   min-height: 26px;
   background-image: url("../../../../public/image/svg/radiobutton.svg");
+  @include mobile {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("../../../../public/image/svg/radiobutton_mobile.svg");
+  }
 }
 
 .checkbox_button {
@@ -59,18 +81,26 @@
   height: 22px;
   flex-shrink: 0;
   flex-grow: 0;
-  border: 2px solid #1b1f2b;
+  border: 2px solid $black-color;
   border-radius: 0.25em;
   margin-right: 19px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
+  @include mobile {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 62px;
+  }
 }
 
 .checkbox_button:checked + label::before {
-  border-color: #1b1f2b;
-  background-color: white;
+  border-color: $black-color;
+  background-color: $white-color;
   background-image: url("../../../../public/image/svg/check_dogovor.svg");
   background-size: 70%;
   background-position: center;
+  @include mobile {
+    background-image: url("../../../../public/image/svg/check_dogovor_mobile.svg");
+  }
 }

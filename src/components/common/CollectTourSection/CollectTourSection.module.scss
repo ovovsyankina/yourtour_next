@@ -1,19 +1,44 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 @use "@/styles/fonts" as *;
 
 .root {
   display: flex;
   width: 100%;
   height: 1245px;
-  margin-top: 136px;
+  margin-top: 135px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include tablet {
+    height: 1225px;
+  }
+  @include small_tablet {
+    margin-top: 75px;
+    height: 1160px;
+  }
+  @include mobile {
+    height: 1254px;
+  }
 }
-
-.input_form {
+.collectTour_window {
   display: flex;
   width: 1170px;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 318px;
+  }
+}
+.input_form {
+  display: flex;
+  width: 100%;
   height: 986px;
   padding: 70px;
   margin-top: 100px;
@@ -21,6 +46,21 @@
   align-items: flex-start;
   background: $white-color;
   border-radius: 50px;
+  @include tablet {
+    width: 89.7%;
+    height: 966px;
+    padding: 60px;
+  }
+  @include small_tablet {
+    margin-top: 40px;
+  }
+
+  @include mobile {
+    width: 100%;
+    height: 1110px;
+    padding: 20px;
+    border-radius: 30px;
+  }
 }
 
 .input_fields {
@@ -30,11 +70,14 @@
   justify-content: space-between;
   align-content: space-between;
   flex-wrap: wrap;
+  @include mobile {
+    height: 597px;
+  }
 }
 
 .check_age {
   display: flex;
-  width: 1030px;
+  width: 100%;
   height: 86px;
   margin-top: 31px;
   flex-direction: column;
@@ -42,6 +85,14 @@
   font-size: 20px;
   line-height: 142%;
   color: $black-color;
+  @include small_tablet {
+    font-size: 18px;
+  }
+  @include mobile {
+    font-size: 16px;
+    line-height: 142%;
+    margin-top: 30px;
+  }
 }
 
 .buttons_age {
@@ -52,6 +103,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @include mobile {
+    width: 138px;
+    margin-top: 7px;
+  }
 }
 
 .licensed_contract {
@@ -62,20 +117,40 @@
   font-family: Roboto_Regular;
   font-size: 17px;
   line-height: 142%;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-content: center;
+  @include small_tablet {
+    font-size: 14px;
+  }
+  @include mobile {
+    width: 278px;
+    height: 69px;
+    font-size: 16px;
+  }
 }
 
 .contract_text {
   margin-left: 8px;
   letter-spacing: -0.01em;
   color: $grey-color;
+  @include tablet {
+    margin-left: 0;
+  }
+  @include mobile {
+    margin-top: -13px;
+    line-height: 142%;
+    letter-spacing: 0.01px;
+  }
 }
 
 .contract_blackText {
   color: $black-color;
   letter-spacing: -0.01em;
+  @include mobile {
+    letter-spacing: 0;
+  }
+
   &:hover {
     cursor: pointer;
     text-decoration: underline 1px;
@@ -94,6 +169,13 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: flex-start;
+  @include small_tablet {
+    width: 100%;
+    height: 47px;
+  }
+  @include mobile {
+    margin-top: 17px;
+  }
 }
 
 .submit_button {
@@ -109,7 +191,15 @@
   color: $white-color;
   background: $green400-color;
   border-radius: 10px;
-
+  @include small_tablet {
+    width: 220px;
+    height: 47px;
+  }
+  @include mobile {
+    width: 134px;
+    padding: 13px 28px;
+    font-size: 16px;
+  }
   &:hover {
     background: $green300-color;
     cursor: pointer;
@@ -133,7 +223,14 @@
   color: $green400-color;
   background: $green100-color;
   border-radius: 10px;
-
+  @include small_tablet {
+    width: 220px;
+    height: 47px;
+  }
+  @include mobile {
+    width: 134px;
+    font-size: 16px;
+  }
   &:hover {
     background: $grey100-color;
     cursor: pointer;
@@ -148,5 +245,5 @@
   font-family: Roboto_Regular;
   font-size: 15px;
   line-height: 142%;
-  color: red;
+  color: $red-color;
 }

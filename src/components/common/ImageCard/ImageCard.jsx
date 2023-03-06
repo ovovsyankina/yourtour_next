@@ -11,6 +11,7 @@ const ImageCard = ({ srcImg, title, description }) => {
           src={srcImg}
           alt={srcImg}
           className={styles.img_card && styles.size_tour}
+          sizes="48vw"
           fill
         />
       </div>

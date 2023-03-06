@@ -1,4 +1,5 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 @use "@/styles/fonts" as *;
 
 .root {
@@ -10,19 +11,33 @@
   font-size: 20px;
   flex-direction: column;
   align-items: flex-start;
+  @include tablet {
+    width: 100%;
+  }
+  @include small_tablet {
+    font-size: 18px;
+  }
+  @include mobile {
+    height: 163px;
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 142%;
+  }
 }
 .comment_field {
   display: flex;
-  width: 1030px;
+  width: 100%;
   height: 152px;
   padding: 20px;
   margin-top: 8px;
-  font-family: Roboto_Regular;
-  font-size: 20px;
   background: $beige100-color;
   border: 1px solid $beige200-color;
   border-radius: 10px;
   resize: none;
+
+  @include mobile {
+    height: 132px;
+  }
 
   &:hover {
     background: $beige200-color;

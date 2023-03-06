@@ -1,4 +1,5 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 @use "@/styles/fonts" as *;
 
 .root {
@@ -7,24 +8,57 @@
   height: 370px;
   margin-top: 136px;
   justify-content: center;
+  @include small_tablet {
+    margin-top: 75px;
+    height: 505px;
+  }
+  @include mobile {
+    height: 285px;
+  }
 }
 .contact_window {
   display: flex;
   width: 771px;
-  height: 370px;
+  height: 100%;
   flex-direction: row;
   align-items: center;
+
+  @include small_tablet {
+    flex-direction: column;
+  }
+  @include mobile {
+    height: 285px;
+  }
 }
 .contact_img {
   border-radius: 50px;
+  @include mobile {
+    width: 130px;
+    height: 133px;
+    border-radius: 20px;
+  }
 }
 .contact_info {
   margin-left: 30px;
+  @include small_tablet {
+    margin: 40px 0 0 0;
+  }
+  @include mobile {
+    width: 293px;
+    margin: 34px 0 0 0;
+  }
 }
 .contact_header {
   font-family: Roboto_Medium;
   font-size: 35px;
   line-height: 122%;
+  @include mobile {
+    font-family: Roboto_Bold;
+    font-size: 23px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
 }
 
 .contact_email {
@@ -33,6 +67,10 @@
   font-size: 20px;
   line-height: 142%;
   color: $grey-color;
+  @include mobile {
+    font-size: 16px;
+    text-align: center;
+  }
 }
 .contact_email_black {
   color: $black-color;

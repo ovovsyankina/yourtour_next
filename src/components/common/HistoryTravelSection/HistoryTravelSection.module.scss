@@ -1,4 +1,5 @@
 @use "@/styles/color" as *;
+@use "@/styles/media" as *;
 @use "@/styles/fonts" as *;
 
 .root {
@@ -9,15 +10,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include small_tablet {
+    margin-top: 75px;
+  }
+  @include mobile {
+    height: 1597px;
+  }
 }
 
 .historyTravel_window {
   display: flex;
   width: 1170px;
-  height: 2060px;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include tablet {
+    width: 89.7%;
+  }
+  @include mobile {
+    width: 318px;
+  }
 }
 
 .image_cards {
@@ -28,4 +42,11 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
+  @include small_tablet {
+    margin-top: 50px;
+  }
+  @include mobile {
+    width: 318px;
+    height: 1405px;
+  }
 }
