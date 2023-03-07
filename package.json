@@ -1,12 +1,13 @@
 {
   "name": "yourtour_next",
   "version": "0.1.0",
+  "homepage": "https://ovovsyankina.github.io/yourtour_next",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prod": "next export"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -19,5 +20,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.58.3",
     "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }

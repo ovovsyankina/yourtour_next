@@ -24,6 +24,7 @@ const CollectTourSection = () => {
         <Formik
           initialValues={{
             firstName: "",
+            direction: "",
             email: "",
             phone: "",
             dateFrom: "",
@@ -43,7 +44,7 @@ const CollectTourSection = () => {
             phone: Yup.string()
               .matches(/(\+7)[0-9]{3}[0-9]{4}/, "Номер телефона введен неверно")
               .required("Введите свой номер телефона"),
-
+            direction: Yup.string().required("Выберите один из пунктов"),
             dateFrom: Yup.date().required("Введите дату начала"),
 
             dateBefore: Yup.date()
@@ -76,11 +77,16 @@ const CollectTourSection = () => {
                   errors={errors.firstName}
                   touched={touched.firstName}
                 />
+
                 <Select
                   name="direction"
                   fieldName="Направление"
                   placeholderOption="Куда хотите ехать"
                   options={["Пункт 1 выбран", "Пункт 2 выбран"]}
+                  onChange={handleChange}
+                  value={values.direction}
+                  errors={errors.direction}
+                  touched={touched.direction}
                 />
                 <Input
                   name="email"

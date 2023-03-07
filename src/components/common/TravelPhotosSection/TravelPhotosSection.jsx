@@ -31,8 +31,7 @@ const TravelPhotosSection = () => {
                 <Image
                   src={img.srcImg}
                   alt={img.srcImg}
-                  width="442"
-                  height="301"
+                  fill
                   className={styles.img}
                 />
               </div>

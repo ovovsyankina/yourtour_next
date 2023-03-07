@@ -1,11 +1,25 @@
 import styles from "./Select.module.scss";
 import { array, string } from "prop-types";
 
-const Select = ({ fieldName, placeholderOption, options, name }) => {
+const Select = ({
+  fieldName,
+  placeholderOption,
+  options,
+  name,
+  value,
+  onChange,
+  errors,
+  touched,
+}) => {
   return (
     <div className={styles.root}>
       <label htmlFor={name}>{fieldName}</label>
-      <select name={name} className={styles.dropdown} defaultValue="">
+      <select
+        name={name}
+        className={styles.dropdown}
+        onChange={onChange}
+        value={value}
+      >
         <option value="" disabled className={styles.placeholder}>
           {placeholderOption}
         </option>
@@ -15,6 +29,10 @@ const Select = ({ fieldName, placeholderOption, options, name }) => {
           </option>
         ))}
       </select>
+
+      {errors && touched && (
+        <div className={styles.error_message}>{errors}</div>
+      )}
     </div>
   );
 };

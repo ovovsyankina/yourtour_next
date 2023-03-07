@@ -43,6 +43,12 @@
   appearance: none;
   color: $black-color;
 
+  &:required:invalid {
+    color: $grey-color;
+  }
+  option {
+    color: $black-color;
+  }
   @include small_tablet {
     font-size: 18px;
   }
@@ -62,5 +68,16 @@
 
   &:focus {
     border: 1px solid $grey-color;
+  }
+}
+
+.error_message {
+  font-family: Roboto_Regular;
+  font-size: 15px;
+  line-height: 142%;
+  color: $red-color;
+
+  @include mobile {
+    font-size: 9px;
   }
 }
