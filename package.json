@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "gh-pages -d build"
+    "deploy": "next gh-pages build"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -20,8 +20,5 @@
     "react-dom": "18.2.0",
     "sass": "^1.58.3",
     "yup": "^1.0.2"
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
