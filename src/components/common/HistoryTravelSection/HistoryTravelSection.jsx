@@ -18,16 +18,7 @@ const HistoryTravelSection = () => {
         />
         <div className={styles.image_cards}>
           {cardsHistoryTour.map((card) => {
-            return (
-              <StoryCard
-                key={card.index}
-                srcImg={card.srcImg}
-                title={card.title}
-                description={card.description}
-                descriptionDop={card.descriptionDop}
-                socialNetwork={card.socialNetwork}
-              />
-            );
+            return <StoryCard key={card.index} card={card} />;
           })}
         </div>
       </div>

@@ -81,7 +81,6 @@
 
 .img_card {
   border-radius: 50px;
-
   @include mobile {
     border-radius: 20px;
   }
@@ -90,6 +89,7 @@
 .size_tour {
   transition: 300ms ease;
   transform: scale(1);
+  object-fit: cover;
 }
 
 .card_children {

@@ -55,10 +55,6 @@
     background-position-y: calc(100% - 13px);
   }
 
-  &:invalid {
-    color: $grey-color;
-  }
-
   &:hover {
     background-color: $beige200-color;
     cursor: pointer;

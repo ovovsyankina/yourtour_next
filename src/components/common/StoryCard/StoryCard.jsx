@@ -1,34 +1,28 @@
 import styles from "./StoryCard.module.scss";
 import Image from "next/image";
-import { array, string } from "prop-types";
+import { object } from "prop-types";
 
-const StoryCard = ({
-  srcImg,
-  title,
-  description,
-  descriptionDop,
-  socialNetwork,
-}) => {
+const StoryCard = ({ card }) => {
   return (
     <div className={styles.root}>
       <div className={styles.img}>
         <div className={styles.img_gradient} />
         <Image
-          src={srcImg}
-          alt={srcImg}
+          src={card.srcImg}
+          alt={card.srcImg}
           fill
           className={styles.img_card && styles.size_tour}
         />
       </div>
       <div className={styles.card_children}>
         <div>
-          <p className={styles.name_tour}>{title}</p>
+          <p className={styles.name_tour}>{card.title}</p>
           <div className={styles.description_tour}>
-            {description}
+            {card.description}
 
-            {descriptionDop && (
+            {card.descriptionDop && (
               <ul className={styles.ul_dop}>
-                {descriptionDop.map((dopInfo, i) => {
+                {card.descriptionDop.map((dopInfo, i) => {
                   return <li key={i}>{dopInfo}</li>;
                 })}
               </ul>
@@ -46,9 +40,9 @@ const StoryCard = ({
             />
           </div>
           <div>
-            {socialNetwork && (
+            {card.socialNetwork && (
               <div className={styles.social_networks}>
-                {socialNetwork.map((social, i) => {
+                {card.socialNetwork.map((social, i) => {
                   return (
                     <p key={i} className={styles.social_item}>
                       {social}
@@ -65,11 +59,7 @@ const StoryCard = ({
 };
 
 StoryCard.propTypes = {
-  srcImg: string,
-  title: string,
-  description: string,
-  descriptionDop: array,
-  socialNetwork: array,
+  card: object,
 };
 
 export default StoryCard;

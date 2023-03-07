@@ -1,15 +1,15 @@
 import styles from "./ImageCard.module.scss";
 import Image from "next/image";
-import { string } from "prop-types";
+import { object } from "prop-types";
 
-const ImageCard = ({ srcImg, title, description }) => {
+const ImageCard = ({ card }) => {
   return (
     <div className={styles.root}>
       <div className={styles.img}>
         <div className={styles.img_gradient} />
         <Image
-          src={srcImg}
-          alt={srcImg}
+          src={card.srcImg}
+          alt={card.srcImg}
           className={styles.img_card && styles.size_tour}
           sizes="48vw"
           fill
@@ -17,8 +17,8 @@ const ImageCard = ({ srcImg, title, description }) => {
       </div>
       <div className={styles.card_children}>
         <div>
-          <p className={styles.name_tour}>{title}</p>
-          <div className={styles.prise_tour}>{description}</div>
+          <p className={styles.name_tour}>{card.title}</p>
+          <div className={styles.prise_tour}>{card.description}</div>
         </div>
         <div className={styles.expand}>
           <p className={styles.detailed}>Подробнее</p>
@@ -35,9 +35,7 @@ const ImageCard = ({ srcImg, title, description }) => {
 };
 
 ImageCard.propTypes = {
-  srcImg: string,
-  title: string,
-  description: string,
+  card: object,
 };
 
 export default ImageCard;

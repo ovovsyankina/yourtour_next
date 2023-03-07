@@ -25,14 +25,7 @@ const SelectTourSection = () => {
         </div>
         <div className={styles.image_cards}>
           {cardsSelectTour.map((card) => {
-            return (
-              <ImageCard
-                key={card.index}
-                srcImg={card.srcImg}
-                title={card.title}
-                description={card.description}
-              />
-            );
+            return <ImageCard key={card.index} card={card} />;
           })}
         </div>
       </div>

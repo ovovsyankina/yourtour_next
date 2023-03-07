@@ -80,8 +80,7 @@ const CollectTourSection = () => {
                   name="direction"
                   fieldName="Направление"
                   placeholderOption="Куда хотите ехать"
-                  option1="Пункт 1 выбран"
-                  option2="Пункт 2 выбран"
+                  options={["Пункт 1 выбран", "Пункт 2 выбран"]}
                 />
                 <Input
                   name="email"

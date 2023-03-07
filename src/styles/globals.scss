@@ -7,19 +7,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   background-color: transparent;
 }
+
 ul {
   list-style: none;
 }
+
 button {
   border: none;
   font: inherit;
   color: inherit;
   background-color: transparent;
 }
+
 h2 {
   font-family: Roboto_Bold;
   font-size: 59px;
@@ -27,6 +31,7 @@ h2 {
   text-align: center;
   color: $black-color;
 }
+
 input:focus,
 select:focus,
 textarea:focus {
@@ -34,10 +39,12 @@ textarea:focus {
   box-shadow: none;
   border-color: transparent;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 input::-webkit-datetime-edit-month-field,
 input::-webkit-datetime-edit-day-field,
 input::-webkit-datetime-edit-year-field {
@@ -48,18 +55,23 @@ input::-webkit-datetime-edit-year-field {
 input::-webkit-datetime-edit-text {
   color: $grey-color;
 }
+
 input[type="date"] {
   font-family: "Roboto_Regular";
   line-height: 142%;
   font-size: 20px;
+
   @include small_tablet {
     font-size: 18px;
   }
+
   @include mobile {
-    //margin-left: -2px;
     font-size: 16px;
   }
-  &:invalid {
-    color: $grey-color;
-  }
+}
+input[type="date"][value=""] {
+  color: $grey-color;
+}
+option[value=""] {
+  color: $grey-color;
 }
