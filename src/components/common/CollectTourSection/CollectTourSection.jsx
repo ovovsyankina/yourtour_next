@@ -1,64 +1,28 @@
 import styles from "./CollectTourSection.module.scss";
-import BlockHeader from "../BlockHeader/BlockHeader";
+import BlockHeader from "../BlockHeader";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import Input from "../Input/Input";
-import Select from "../Select/Select";
-import Textarea from "../Textarea/Textarea";
-import Checkbox from "../Checkbox/Checkbox";
-import Button from "../Button/Button";
+import Select from "../Select";
+import Textarea from "../Textarea";
+import Checkbox from "../Checkbox";
+import Button from "../Button";
+import { dataInput } from "@/utils/data";
 
 const CollectTourSection = () => {
   return (
-    <div className={styles.root}>
+    <div className={styles.root} id="collectTour">
       <div className={styles.collectTour_window}>
         <BlockHeader
           title="Собери свой тур"
-          description={
-            <>
+          description="
               Идейные соображения высшего порядка,
               <br />а также рамки и место обучения кадров
-            </>
-          }
+            "
         />
         <Formik
-          initialValues={{
-            firstName: "",
-            direction: "",
-            email: "",
-            phone: "",
-            dateFrom: "",
-            dateBefore: "",
-            comment: "",
-            is18: "",
-            isAgree: false,
-          }}
-          validationSchema={Yup.object({
-            firstName: Yup.string()
-              .max(15, "Имя не должно превышать 15 символов")
-              .required("Введите имя"),
-
-            email: Yup.string()
-              .email("Неверный адрес электронной почты")
-              .required("Введите адрес электронной почты"),
-            phone: Yup.string()
-              .matches(/(\+7)[0-9]{3}[0-9]{4}/, "Номер телефона введен неверно")
-              .required("Введите свой номер телефона"),
-            direction: Yup.string().required("Выберите один из пунктов"),
-            dateFrom: Yup.date().required("Введите дату начала"),
-
-            dateBefore: Yup.date()
-              .required("Введите дату окончания")
-              .min(
-                Yup.ref("dateFrom"),
-                "Дата окончания не может быть раньше времени начала"
-              ),
-            comment: Yup.string().max(105, "Должно быть не более 105 символов"),
-            is18: Yup.string().required("Выберите значение"),
-            isAgree: Yup.bool()
-              .oneOf([true], "Поставьте галочку")
-              .required("Выберите значение"),
-          })}
+          initialValues={dataInput.initialValues}
+          validationSchema={dataInput.validationSchema}
           onSubmit={(values, { resetForm }) => {
             console.log(values);
             resetForm();
@@ -67,65 +31,33 @@ const CollectTourSection = () => {
           {({ values, errors, handleChange, touched, setFieldValue }) => (
             <Form className={styles.input_form}>
               <div className={styles.input_fields}>
-                <Input
-                  name="firstName"
-                  type="text"
-                  placeholder="Введите Ваше имя"
-                  fieldName="Имя"
-                  onChange={handleChange}
-                  value={values.firstName}
-                  errors={errors.firstName}
-                  touched={touched.firstName}
-                />
-
-                <Select
-                  name="direction"
-                  fieldName="Направление"
-                  placeholderOption="Куда хотите ехать"
-                  options={["Пункт 1 выбран", "Пункт 2 выбран"]}
-                  onChange={handleChange}
-                  value={values.direction}
-                  errors={errors.direction}
-                  touched={touched.direction}
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="example@mail.com"
-                  fieldName="Email"
-                  onChange={handleChange}
-                  value={values.email}
-                  errors={errors.email}
-                  touched={touched.email}
-                />
-                <Input
-                  name="phone"
-                  type="tel"
-                  placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _"
-                  fieldName="Телефон"
-                  onChange={handleChange}
-                  value={values.phone}
-                  errors={errors.phone}
-                  touched={touched.phone}
-                />
-                <Input
-                  name="dateFrom"
-                  type="date"
-                  fieldName="Дата от"
-                  onChange={handleChange}
-                  value={values.dateFrom}
-                  errors={errors.dateFrom}
-                  touched={touched.dateFrom}
-                />
-                <Input
-                  name="dateBefore"
-                  type="date"
-                  fieldName="Дата до"
-                  onChange={handleChange}
-                  value={values.dateBefore}
-                  errors={errors.dateBefore}
-                  touched={touched.dateBefore}
-                />
+                {dataInput.fields.map((item) => {
+                  return item.type === "select" ? (
+                    <Select
+                      key={item.id}
+                      name={item.id}
+                      fieldName={item.fieldName}
+                      placeholderOption={item.placeholder}
+                      options={item.options}
+                      onChange={handleChange}
+                      value={values[item.id]}
+                      errors={errors[item.id]}
+                      touched={touched[item.id]}
+                    />
+                  ) : (
+                    <Input
+                      key={item.id}
+                      name={item.id}
+                      type={item.type}
+                      placeholder={item.placeholder}
+                      fieldName={item.fieldName}
+                      onChange={handleChange}
+                      value={values[item.id]}
+                      errors={errors[item.id]}
+                      touched={touched[item.id]}
+                    />
+                  );
+                })}
               </div>
               <Textarea
                 name="comment"

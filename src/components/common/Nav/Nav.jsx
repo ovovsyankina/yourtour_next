@@ -22,22 +22,20 @@ const Nav = ({ srcImg, isFix }) => {
           priority
         />
         <nav className={styles.nav_items}>
-          {navLinks.map((link) => {
-            return (
-              <Link
-                href={link.path}
-                key={link.index}
-                className={classNames(styles.nav_item, {
-                  [styles.nav_item_fix]: isFix,
-                })}
-              >
-                {link.name}
-              </Link>
-            );
-          })}
+          {navLinks.map((link) => (
+            <Link
+              href={link.path}
+              key={link.index}
+              className={classNames(styles.nav_item, {
+                [styles.nav_item_fix]: isFix,
+              })}
+            >
+              {link.name}
+            </Link>
+          ))}
         </nav>
         <Link
-          href="/"
+          href="tel: +7 999 999 99 99"
           className={classNames(styles.phone_number, {
             [styles.phone_number_fix]: isFix,
           })}

@@ -1,5 +1,6 @@
 import styles from "./ContactSection.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 const ContactSection = () => {
   return (
@@ -18,9 +19,12 @@ const ContactSection = () => {
           </div>
           <div className={styles.contact_email}>
             Напиши на почту и узнай подробности на{" "}
-            <span className={styles.contact_email_black}>
+            <Link
+              className={styles.contact_email_black}
+              href="mailto: yourtour@gmail.com"
+            >
               yourtour@gmail.com
-            </span>
+            </Link>
           </div>
         </div>
       </div>

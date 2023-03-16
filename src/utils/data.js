@@ -1,19 +1,21 @@
+import * as Yup from "yup";
+
 export const navLinks = [
-  { name: "Туры", path: "/", index: 1 },
+  { name: "Туры", path: "#selectTour", index: 1 },
 
   {
     name: "Создать тур",
-    path: "/",
+    path: "#collectTour",
     index: 2,
   },
   {
     name: "Отзывы",
-    path: "/",
+    path: "#reviews",
     index: 3,
   },
   {
     name: "Истории",
-    path: "/",
+    path: "#historyTravel",
     index: 4,
   },
 ];
@@ -214,3 +216,82 @@ export const imgTravelPhoto = [
     noneMobile: true,
   },
 ];
+
+export const dataInput = {
+  initialValues: {
+    firstName: "",
+    direction: "",
+    email: "",
+    phone: "",
+    dateFrom: "",
+    dateBefore: "",
+    comment: "",
+    is18: "",
+    isAgree: false,
+  },
+
+  validationSchema: Yup.object({
+    firstName: Yup.string()
+      .max(15, "Имя не должно превышать 15 символов")
+      .required("Введите имя"),
+
+    email: Yup.string()
+      .email("Неверный адрес электронной почты")
+      .required("Введите адрес электронной почты"),
+    phone: Yup.string()
+      .matches(/(\+7)[0-9]{3}[0-9]{4}/, "Номер телефона введен неверно")
+      .required("Введите свой номер телефона"),
+    direction: Yup.string().required("Выберите один из пунктов"),
+    dateFrom: Yup.date().required("Введите дату начала"),
+
+    dateBefore: Yup.date()
+      .required("Введите дату окончания")
+      .min(
+        Yup.ref("dateFrom"),
+        "Дата окончания не может быть раньше времени начала"
+      ),
+    comment: Yup.string().max(105, "Должно быть не более 105 символов"),
+    is18: Yup.string().required("Выберите значение"),
+    isAgree: Yup.bool()
+      .oneOf([true], "Поставьте галочку")
+      .required("Выберите значение"),
+  }),
+
+  fields: [
+    {
+      id: "firstName",
+      fieldName: "Имя",
+      type: "text",
+      placeholder: "Введите Ваше имя",
+    },
+    {
+      id: "direction",
+      fieldName: "Направление",
+      type: "select",
+      placeholder: "Куда хотите ехать",
+      options: ["Пункт 1 выбран", "Пункт 2 выбран"],
+    },
+    {
+      id: "email",
+      fieldName: "Email",
+      type: "email",
+      placeholder: "example@mail.com",
+    },
+    {
+      id: "phone",
+      fieldName: "Телефон",
+      type: "tel",
+      placeholder: "+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _",
+    },
+    {
+      id: "dateFrom",
+      type: "date",
+      fieldName: "Дата от",
+    },
+    {
+      id: "dateBefore",
+      type: "date",
+      fieldName: "Дата до",
+    },
+  ],
+};

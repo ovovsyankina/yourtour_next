@@ -1,11 +1,14 @@
 import styles from "./ReviewsCard.module.scss";
 import Image from "next/image";
-import { object, string } from "prop-types";
+import { string } from "prop-types";
 
 const ReviewsCard = ({ author, imgAuthor, nameTour, review }) => {
   return (
     <div className={styles.root}>
-      <div className={styles.review}>{review}</div>
+      <div
+        className={styles.review}
+        dangerouslySetInnerHTML={{ __html: review }}
+      />
       <div className={styles.review_author}>
         <div className={styles.info_author}>
           <div className={styles.name_author}>{author}</div>
@@ -27,7 +30,7 @@ ReviewsCard.propTypes = {
   author: string,
   imgAuthor: string,
   nameTour: string,
-  review: object,
+  review: string,
 };
 
 export default ReviewsCard;

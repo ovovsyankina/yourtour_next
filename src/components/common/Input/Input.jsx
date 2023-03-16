@@ -22,7 +22,7 @@ const Input = ({
         onChange={onChange}
         value={value}
       />
-      {{ errors } && { touched } && (
+      {errors && touched && (
         <div className={styles.error_message}>{errors}</div>
       )}
     </div>

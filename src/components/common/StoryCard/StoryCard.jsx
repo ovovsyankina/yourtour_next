@@ -22,9 +22,9 @@ const StoryCard = ({ card }) => {
 
             {card.descriptionDop && (
               <ul className={styles.ul_dop}>
-                {card.descriptionDop.map((dopInfo, i) => {
-                  return <li key={i}>{dopInfo}</li>;
-                })}
+                {card.descriptionDop.map((dopInfo, i) => (
+                  <li key={i}>{dopInfo}</li>
+                ))}
               </ul>
             )}
           </div>
@@ -42,13 +42,11 @@ const StoryCard = ({ card }) => {
           <div>
             {card.socialNetwork && (
               <div className={styles.social_networks}>
-                {card.socialNetwork.map((social, i) => {
-                  return (
-                    <p key={i} className={styles.social_item}>
-                      {social}
-                    </p>
-                  );
-                })}
+                {card.socialNetwork.map((social, i) => (
+                  <p key={i} className={styles.social_item}>
+                    {social}
+                  </p>
+                ))}
               </div>
             )}
           </div>

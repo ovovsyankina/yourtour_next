@@ -16,7 +16,7 @@ const Checkbox = ({ type, id, name, children, onChange, checked }) => {
         id={id}
         checked={checked}
       />
-      <label htmlFor={id} className={styles.label_button}></label>
+      <label htmlFor={id} className={styles.label_button} />
       {children}
     </div>
   );
